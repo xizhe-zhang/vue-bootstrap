@@ -1,12 +1,11 @@
+import { assert } from 'chai'
 import Vue from 'vue'
-import Hello from 'src/components/Hello'
+import App from 'src/App'
 
-describe('Hello.vue', () => {
-  it('should render correct contents', () => {
-    const vm = new Vue({
-      template: '<div><hello></hello></div>',
-      components: { Hello }
-    }).$mount()
-    expect(vm.$el.querySelector('.hello h1').textContent).to.contain('Hello World!')
+describe('App.vue', () => {
+  it('Check store defined', () => {
+    let vm = new Vue(App).$mount()
+    console.log('store:' + vm.$store)
+    assert.isDefined(vm.$store, 'Store should be defined')
   })
 })
