@@ -99,8 +99,5 @@ module.exports = {
   },
   vue: {
     loaders: utils.cssLoaders()
-  },
-  plugins: [
-    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js')
-  ]
+  }
 }
